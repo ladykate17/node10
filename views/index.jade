@@ -7,4 +7,9 @@ block content
 	.row.center.extra-padding
 		.container.col-xs-8.col-xs-offset-2
 			p
-				a.btn.btn-info#load-countries LOAD COUNTRIES
+				//- javascript:void(0) is preventing the page from navigating away (think preventDefault -ish)
+				a.btn.btn-info#load-countries(href="javascript:void(0)") LOAD COUNTRIES 
+	
+	.row.extra-padding
+		.container.col-xs-8.col-xs-offset-2			
+			ul#countries

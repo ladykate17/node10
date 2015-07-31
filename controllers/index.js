@@ -1,26 +1,24 @@
-var getCountries = require('../models/countries.json');
+var CountryData = require('../models/countries.json');
 
 var indexController = {
 	index: function(req, res) {
 		res.render('index');
 	},
 	
-	rencountries: function(req, res) {
-		// console.log(getCountries)
-		res.render('countries');
+	getCountries: function(req, res) {
+		// console.log(GetCountries)
+		res.send(CountryData);
 	},
 
-	countries: function(req, res){
-
-		getCountries.find({}, function(err, doc){
-			if (err){
-				res.send({err: err});
-			}
-			else {
-				res.send({data: doc.name})
-			}
-		})
+	renCountries: function(req, res){
+		res.render('countries');
 		// res.send('TEST');
+	},
+
+	getSearchTerm: function(req, res){
+		var getSearchTerm = {
+			name : req.body.search
+		}
 	}
 };
 
